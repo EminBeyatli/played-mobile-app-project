@@ -1,22 +1,22 @@
-# 🎮 played
+#  played
 
 **played** is a mobile app for logging, rating, and reviewing the games you play, in the spirit of Letterboxd. Keep track of what you've played, build a wishlist, write reviews, and follow friends to see what they're playing.
 
-> Mobile Programming course project (GitHub submission)
 
 ---
 
-## 👥 Contributors
+##  Contributors
 
-| Name | GitHub | Role |
+| Name | GitHub 
 |---|---|---|
-| _Name Surname_ | [@username](https://github.com/username) | _e.g., UI/UX design_ |
-| _Name Surname_ | [@username](https://github.com/username) | _e.g., Frontend_ |
-| _Name Surname_ | [@username](https://github.com/username) | _e.g., Backend_ |
+| Bensu Kocatepe | [@username](https://github.com/username)
+| Muhammed Emin Beyatlı | [@username](https://github.com/username)
+| Alperen İlhan İpçi | [@username](https://github.com/username) 
+| Demirhan Demir | [@username](https://github.com/username)
 
 <!-- For an individual submission, list yourself as the sole author. -->
 
-## 🎨 Figma Links
+##  Figma Links
 
 The editable design work is kept in Figma. View access is granted to the instructor.
 
@@ -26,7 +26,7 @@ The editable design work is kept in Figma. View access is granted to the instruc
 | Mockups | [Open in Figma](PASTE_MOCKUPS_LINK) |
 | Interactive prototype | [Open prototype](PASTE_PROTOTYPE_LINK) |
 
-## 📄 Submission Documents
+##  Submission Documents
 
 | Document | File |
 |---|---|
@@ -34,7 +34,7 @@ The editable design work is kept in Figma. View access is granted to the instruc
 | User flow | [docs/user-flow.pdf](docs/user-flow.pdf) |
 | Architecture and protocols | [docs/architecture-and-protocols.pdf](docs/architecture-and-protocols.pdf) |
 
-## ✨ Features
+##  Features
 
 - **Authentication:** welcome splash screen, login, and sign up (username, email, password, confirm password, terms and conditions).
 - **Home:** horizontally scrollable *Trending Games* and *Reviews from Friends*.
@@ -45,7 +45,7 @@ The editable design work is kept in Figma. View access is granted to the instruc
 - **Social:** followers and following lists, plus friends' reviews on the home page.
 - **Bottom navigation (HUD):** Home, Search, and Profile tabs; the active tab's icon is highlighted.
 
-## 📱 Screens
+##  Screens
 
 | Screen | Description |
 |---|---|
@@ -63,7 +63,7 @@ The editable design work is kept in Figma. View access is granted to the instruc
 
 <!-- Optional: add screenshots, e.g. ![Home](docs/screenshots/home.png) -->
 
-## 🏗️ Architecture
+##  Architecture
 
 The app follows the **MVVM (Model–View–ViewModel)** pattern.
 
@@ -84,7 +84,7 @@ The app follows the **MVVM (Model–View–ViewModel)** pattern.
 
 See the full details in [Architecture and protocols](docs/architecture-and-protocols.pdf).
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```
 played/
@@ -96,6 +96,6 @@ played/
 └── README.md
 ```
 
-## 📄 License
+##  License
 
 This project was created for educational purposes.
