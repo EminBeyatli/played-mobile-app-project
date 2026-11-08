@@ -1,2 +1,2 @@
-# gamed-mobile-app-project
+# played-mobile-app-project
 BLANK FOR NOW
