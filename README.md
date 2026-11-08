@@ -21,7 +21,7 @@ The editable design work is kept in Figma. View access is granted to the instruc
 |---|---|
 | Wireframes | [Open in Figma](https://www.figma.com/design/oFSjRCSDxua7S5SxMN3qcM/played?node-id=123-1158) |
 | Mockups | [Open in Figma](https://www.figma.com/design/oFSjRCSDxua7S5SxMN3qcM/played?node-id=123-498) |
-| Interactive prototype | [Open prototype](https://www.figma.com/design/oFSjRCSDxua7S5SxMN3qcM/played?node-id=0-1) |
+| Interactive prototype | [Open prototype](https://www.figma.com/design/oFSjRCSDxua7S5SxMN3qcM/played?node-id=123-1158) |
 
 ##  Features
 
