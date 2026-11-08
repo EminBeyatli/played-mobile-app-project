@@ -7,14 +7,11 @@
 
 ##  Contributors
 
-| Name | GitHub 
-|---|---|---|
-| Bensu Kocatepe | [@username](https://github.com/username)
-| Muhammed Emin Beyatlı | [@username](https://github.com/username)
-| Alperen İlhan İpçi | [@username](https://github.com/username) 
-| Demirhan Demir | [@username](https://github.com/username)
+Bensu Kocatepe
+Muhammed Emin Beyatlı
+Alperen İlhan İpçi
+Demirhan Demir
 
-<!-- For an individual submission, list yourself as the sole author. -->
 
 ##  Figma Links
 
@@ -22,17 +19,9 @@ The editable design work is kept in Figma. View access is granted to the instruc
 
 | Deliverable | Link |
 |---|---|
-| Wireframes | [Open in Figma](PASTE_WIREFRAMES_LINK) |
-| Mockups | [Open in Figma](PASTE_MOCKUPS_LINK) |
-| Interactive prototype | [Open prototype](PASTE_PROTOTYPE_LINK) |
-
-##  Submission Documents
-
-| Document | File |
-|---|---|
-| Design justification | [docs/design-justification.pdf](docs/design-justification.pdf) |
-| User flow | [docs/user-flow.pdf](docs/user-flow.pdf) |
-| Architecture and protocols | [docs/architecture-and-protocols.pdf](docs/architecture-and-protocols.pdf) |
+| Wireframes | [Open in Figma]((https://www.figma.com/design/oFSjRCSDxua7S5SxMN3qcM/played?node-id=123-1158)) |
+| Mockups | [Open in Figma]((https://www.figma.com/design/oFSjRCSDxua7S5SxMN3qcM/played?node-id=123-498)) |
+| Interactive prototype | [Open prototype]((https://www.figma.com/design/oFSjRCSDxua7S5SxMN3qcM/played?node-id=0-1)) |
 
 ##  Features
 
@@ -41,7 +30,7 @@ The editable design work is kept in Figma. View access is granted to the instruc
 - **Search:** search for games and see your *Recently Searched* list.
 - **Game Detail:** poster, release year, platform, score, official description, and user reviews.
 - **Log a Game:** mark as played, like, or add to wishlist, give a 1–5 star rating, and write a review.
-- **Profile:** profile picture, username, played game and review counts, *Favorite Games* (5), and *Played Recently* (8).
+- **Profile:** profile picture, username, played game and review counts, *Favorite Games*, and *Played Recently*.
 - **Social:** followers and following lists, plus friends' reviews on the home page.
 - **Bottom navigation (HUD):** Home, Search, and Profile tabs; the active tab's icon is highlighted.
 
@@ -60,42 +49,3 @@ The editable design work is kept in Figma. View access is granted to the instruc
 | Games | Played, Wishlist, and Likes tabs |
 | Followers / Following | Lists of mutual users |
 | Reviews | The user's reviews with poster and rating |
-
-<!-- Optional: add screenshots, e.g. ![Home](docs/screenshots/home.png) -->
-
-##  Architecture
-
-The app follows the **MVVM (Model–View–ViewModel)** pattern.
-
-- **Model:** data classes (`User`, `Game`, `Log`, `Review`) and repositories (`AuthRepository`, `GameRepository`, `LogRepository`, `UserRepository`).
-- **View:** the screens listed above. They only display data and forward user actions.
-- **ViewModel:** holds screen state and calls repositories (`AuthViewModel`, `HomeViewModel`, `SearchViewModel`, `GameDetailViewModel`, `LogViewModel`, `ProfileViewModel`).
-
-### Protocols and Interfaces
-
-| Protocol / Interface | Purpose |
-|---|---|
-| HTTPS | Encrypted communication with the server |
-| REST API (JSON) | Login, sign up, games, logs, reviews, follow data |
-| Token-based auth (JWT) | Keeps the user signed in and identifies requests |
-| Game database API (e.g., RAWG / IGDB) | Posters, release years, platforms, scores, descriptions |
-| Secure / local storage | Stores the auth token and caches recent searches |
-| Image caching | Smooth scrolling for posters and avatars |
-
-See the full details in [Architecture and protocols](docs/architecture-and-protocols.pdf).
-
-##  Repository Structure
-
-```
-played/
-├── docs/
-│   ├── design-justification.pdf
-│   ├── user-flow.pdf
-│   ├── architecture-and-protocols.pdf
-│   └── screenshots/          # optional supporting material
-└── README.md
-```
-
-##  License
-
-This project was created for educational purposes.
