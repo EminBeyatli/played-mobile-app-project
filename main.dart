@@ -1287,7 +1287,14 @@ class ProfileScreen extends StatelessWidget {
                   thickness: 0.5,
                   height: 1,
                 ),
-                _buildMenuRow('Reviews', () {}),
+                _buildMenuRow('Reviews', () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ReviewsScreen(),
+                    ),
+                  );
+                }),
                 const Divider(
                   color: Color(0xFF938282),
                   thickness: 0.5,
@@ -1711,6 +1718,189 @@ class FollowingScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                const Spacer(),
+              ],
+            ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color(0xFF2C0016),
+        selectedItemColor: const Color(0xFFE4CBBF),
+        unselectedItemColor: const Color(0xFF938282),
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        elevation: 0,
+        currentIndex: 2,
+        onTap: (index) {
+          Navigator.pop(context);
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined, size: 28),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search, size: 28),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline, size: 28),
+            label: '',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// 12. EKRAN: REVIEWS (412x917 - No scrolling)
+class ReviewsScreen extends StatelessWidget {
+  const ReviewsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF2C0016),
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 412),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 24),
+                // Üst Geri Butonu ve Ortalanmış Reviews Başlığı
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 12.0),
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_back_ios_new,
+                            color: Color(0xFFE4CBBF),
+                            size: 18,
+                          ),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                      ),
+                    ),
+                    const Text(
+                      'Reviews',
+                      style: TextStyle(
+                        color: Color(0xFFE4CBBF),
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 36),
+
+                // İnceleme Kartı (Fortnite 2017 + 5 Yıldız + Poster + Yorum)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Row(
+                        children: [
+                          Text(
+                            'Fortnite',
+                            style: TextStyle(
+                              color: Color(0xFFE4CBBF),
+                              fontSize: 13.5,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(width: 6),
+                          Text(
+                            '2017',
+                            style: TextStyle(
+                              color: Color(0xFF938282),
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 4),
+                      Row(
+                        children: List.generate(
+                          5,
+                          (index) => const Icon(
+                            Icons.star,
+                            color: Color(0xFFE4CBBF),
+                            size: 14,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // Sol Poster
+                          Container(
+                            width: 96,
+                            height: 140,
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [Color(0xFF3A7BD5), Color(0xFF00D2FF)],
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Container(
+                                width: double.infinity,
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 5,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.black.withOpacity(0.45),
+                                  borderRadius: const BorderRadius.vertical(
+                                    bottom: Radius.circular(10),
+                                  ),
+                                ),
+                                child: const Text(
+                                  'FORTNITE',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color(0xFFFFD54F),
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 11,
+                                    letterSpacing: 0.8,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 16),
+                          // Sağ Yorum Metni
+                          const Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 4.0),
+                              child: Text(
+                                'Really fun game with friends. Seasonal events makes it even more fun to play.',
+                                style: TextStyle(
+                                  color: Color(0xFFE4CBBF),
+                                  fontSize: 12,
+                                  height: 1.45,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+
                 const Spacer(),
               ],
             ),
