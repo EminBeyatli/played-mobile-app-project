@@ -1261,13 +1261,27 @@ class ProfileScreen extends StatelessWidget {
                   thickness: 0.5,
                   height: 1,
                 ),
-                _buildMenuRow('Followers', () {}),
+                _buildMenuRow('Followers', () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FollowersScreen(),
+                    ),
+                  );
+                }),
                 const Divider(
                   color: Color(0xFF938282),
                   thickness: 0.5,
                   height: 1,
                 ),
-                _buildMenuRow('Following', () {}),
+                _buildMenuRow('Following', () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FollowingScreen(),
+                    ),
+                  );
+                }),
                 const Divider(
                   color: Color(0xFF938282),
                   thickness: 0.5,
@@ -1382,16 +1396,10 @@ class MyGamesScreen extends StatelessWidget {
                   ],
                 ),
                 const Spacer(flex: 1),
-
-                // 1. Kategori: Played (Overflow: Horizontal)
                 _buildGameCategorySection('Played'),
                 const Spacer(flex: 1),
-
-                // 2. Kategori: Wishlist (Overflow: Horizontal)
                 _buildGameCategorySection('Wishlist'),
                 const Spacer(flex: 1),
-
-                // 3. Kategori: Likes (Overflow: Horizontal)
                 _buildGameCategorySection('Likes'),
                 const Spacer(flex: 1),
               ],
@@ -1472,6 +1480,268 @@ class MyGamesScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFFD9D9D9),
         borderRadius: BorderRadius.circular(4),
+      ),
+    );
+  }
+}
+
+// 10. EKRAN: FOLLOWERS (412x917 - No scrolling)
+class FollowersScreen extends StatelessWidget {
+  const FollowersScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final followers = [
+      'username1',
+      'username2',
+      'username3',
+      'username4',
+      'username5',
+    ];
+
+    return Scaffold(
+      backgroundColor: const Color(0xFF2C0016),
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 412),
+            child: Column(
+              children: [
+                const SizedBox(height: 24),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 12.0),
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_back_ios_new,
+                            color: Color(0xFFE4CBBF),
+                            size: 18,
+                          ),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                      ),
+                    ),
+                    const Text(
+                      'Followers',
+                      style: TextStyle(
+                        color: Color(0xFFE4CBBF),
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 24),
+                const Divider(
+                  color: Color(0xFF938282),
+                  thickness: 0.5,
+                  height: 1,
+                ),
+                ...followers.map(
+                  (user) => Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 32.0,
+                          vertical: 14.0,
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 46,
+                              height: 46,
+                              decoration: const BoxDecoration(
+                                color: Color(0xFFD9D9D9),
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                            const SizedBox(width: 22),
+                            Text(
+                              user,
+                              style: const TextStyle(
+                                color: Color(0xFFE4CBBF),
+                                fontSize: 13.5,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Divider(
+                        color: Color(0xFF938282),
+                        thickness: 0.5,
+                        height: 1,
+                      ),
+                    ],
+                  ),
+                ),
+                const Spacer(),
+              ],
+            ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color(0xFF2C0016),
+        selectedItemColor: const Color(0xFFE4CBBF),
+        unselectedItemColor: const Color(0xFF938282),
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        elevation: 0,
+        currentIndex: 2,
+        onTap: (index) {
+          Navigator.pop(context);
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined, size: 28),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search, size: 28),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline, size: 28),
+            label: '',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// 11. EKRAN: FOLLOWING (412x917 - No scrolling)
+class FollowingScreen extends StatelessWidget {
+  const FollowingScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final following = [
+      'username1',
+      'username2',
+      'username3',
+      'username4',
+      'username5',
+    ];
+
+    return Scaffold(
+      backgroundColor: const Color(0xFF2C0016),
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 412),
+            child: Column(
+              children: [
+                const SizedBox(height: 24),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 12.0),
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_back_ios_new,
+                            color: Color(0xFFE4CBBF),
+                            size: 18,
+                          ),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                      ),
+                    ),
+                    const Text(
+                      'Following',
+                      style: TextStyle(
+                        color: Color(0xFFE4CBBF),
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 24),
+                const Divider(
+                  color: Color(0xFF938282),
+                  thickness: 0.5,
+                  height: 1,
+                ),
+                ...following.map(
+                  (user) => Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 32.0,
+                          vertical: 14.0,
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 46,
+                              height: 46,
+                              decoration: const BoxDecoration(
+                                color: Color(0xFFD9D9D9),
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                            const SizedBox(width: 22),
+                            Text(
+                              user,
+                              style: const TextStyle(
+                                color: Color(0xFFE4CBBF),
+                                fontSize: 13.5,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Divider(
+                        color: Color(0xFF938282),
+                        thickness: 0.5,
+                        height: 1,
+                      ),
+                    ],
+                  ),
+                ),
+                const Spacer(),
+              ],
+            ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color(0xFF2C0016),
+        selectedItemColor: const Color(0xFFE4CBBF),
+        unselectedItemColor: const Color(0xFF938282),
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        elevation: 0,
+        currentIndex: 2,
+        onTap: (index) {
+          Navigator.pop(context);
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined, size: 28),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search, size: 28),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline, size: 28),
+            label: '',
+          ),
+        ],
       ),
     );
   }
